@@ -115,7 +115,9 @@ const Index = () => {
         if (lines.length >= 2) {
           const term = lines[0].trim();
           const translation = lines[1].trim();
-          translationMap.set(term, translation);
+          // برعکس کردن متن فارسی برای نمایش صحیح در Unity
+          const reversedTranslation = translation.split('').reverse().join('');
+          translationMap.set(term, reversedTranslation);
         }
       });
 
